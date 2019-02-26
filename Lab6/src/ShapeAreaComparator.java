@@ -33,7 +33,18 @@ public class ShapeAreaComparator implements Comparator<Shape>
 	public int compare(Shape s1, Shape s2)
 	{
 		// TODO: complete this...
-		return s1.getName().toLowerCase().compareTo(s2.getName().toLowerCase());
+		int answer = 0;
+		if (s1.getArea() > s2.getArea()) {
+			answer = 1;
+		}
+		else if (s1.getArea() < s2.getArea()) {
+			answer = -1;
+		}
+		else if (s1.getArea() == s2.getArea()) {
+			answer = 0;
+		}
+		return answer;
+		//return s1.getName().toLowerCase().compareTo(s2.getName().toLowerCase());
 	}
 
 	/**
