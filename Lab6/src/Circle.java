@@ -20,6 +20,9 @@ public class Circle extends Ellipse
 	public Circle(String id, double radius)
 	{
 		// TODO: complete this...
+		super(id);
+		this.radius = radius;
+		
 	}
 
 	/**

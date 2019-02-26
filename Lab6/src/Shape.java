@@ -83,7 +83,7 @@ public abstract class Shape implements Comparable<Shape>
      *
      * B A C
 	 *
-	 * @return -1, 0, or 1. These values are returned on the following conditions:
+	 * @ret urn -1, 0, or 1. These values are returned on the following conditions:
 	 *     (this refers to this Shape object, and s refers to the input parameter Shape s)
 	 *     (1) Area of this is > Area of s: return 1 (this should come after s in a sorted list)
 	 *     (2) Area of this is < Area of s: return -1 (this should come before s in a sorted list)
@@ -149,6 +149,6 @@ public abstract class Shape implements Comparable<Shape>
 	public String toString()
 	{
 		// TODO: complete this...
-		return String.format("<<%s>>\t ID = <<%s>>\t = <<%3d>>\t perimeter = <<>%3d>", args);
+		return String.format("<<%s>>\t ID = <<%s>>\t = <<%.3f>>\t perimeter = <<>%.3f>", id, this.getArea(), this.getPerimeter());
 	}
 }
