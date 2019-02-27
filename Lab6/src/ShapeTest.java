@@ -124,8 +124,7 @@ public class ShapeTest
 	{
 		// TODO: complete this...
 		Shape cir = new Circle("Circle1", 3.0);
-		Assert.assertEquals("To String is incorect", "Circle	Circle1	area = 28.27	perimerter = 18.85"
-				,cir.toString());
+		Assert.assertEquals("To String is incorect", "Circle	Circle1	area = 28.27	perimerter = 18.85", cir.toString());
 	}
 
 	//==================================================================================================================
