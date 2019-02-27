@@ -42,6 +42,10 @@ public class ShapeTest
 		Assert.assertEquals("Square perimeter incorrect.", 10.0, rec.getPerimeter(), 0.0001);
 		Assert.assertEquals("Square type incorrect.", "Rectangle", rec.getShapeType());
 		Assert.assertEquals("Shape ID incorrect.", "Rectangle1", rec.getId());
+		
+		Shape rec2 = new Polygon("Rectangle2");
+		
+		
 	}
 
 	/**
@@ -166,7 +170,7 @@ public class ShapeTest
 		// Test equals:
 		Shape rect = new Rectangle("R1", 3.0,3.0);
 		Shape sqr = new Square("S1", 3.0);
-		ShapeAreaComparator sc = new ShapeAreaComparator();
+		ShapePerimeterComparator sc = new ShapePerimeterComparator();
 		Assert.assertEquals("ShapePerimeterComparator should find shapes equal.", 0, sc.compare(rect, sqr));
 		Assert.assertTrue("ShapePerimeterComparator should find shapes equal.", sc.equals(rect, sqr));
 
