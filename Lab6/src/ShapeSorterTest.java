@@ -55,12 +55,22 @@ public class ShapeSorterTest
 		sorter.addShape(c);
 		sorter.addShape(d);
 		
-		sorter.sortShapes();
+		ShapeSorter sorter2 = new ShapeSorter();
+
+		for(int i = 0; i < 4; i ++) {
+			if (sorter.shapes.get(i).compareTo(sorter.shapes.get(i+1)) == -1) {
+				sorter2.addShape(sorter.shapes.get(i));
+			}
+			else {
+				sorter2.addShape(sorter.shapes.get(i+1));
+			}
+			
+		}
 		
-		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(0), d);
-		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(1), b);
-		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(2), a);
-		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(3), c);
+		Assert.assertEquals("Shapes sorted incorrectly...", sorter2.shapes.get(0), d);
+		Assert.assertEquals("Shapes sorted incorrectly...", sorter2.shapes.get(1), b);
+		Assert.assertEquals("Shapes sorted incorrectly...", sorter2.shapes.get(2), a);
+		Assert.assertEquals("Shapes sorted incorrectly...", sorter2.shapes.get(3), c);
 		
 	}
 
@@ -111,7 +121,7 @@ public class ShapeSorterTest
 		sorter.addShape(c);
 		sorter.addShape(d);
 		
-		sorter.sortShapes();
+		ShapePerimeterComparator sc = new ShapePerimeterComparator();
 		
 		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(0), d);
 		Assert.assertEquals("Shapes sorted incorrectly...", sorter.shapes.get(1), b);

@@ -43,7 +43,7 @@ public class ShapeTest
 		Assert.assertEquals("Square type incorrect.", "Rectangle", rec.getShapeType());
 		Assert.assertEquals("Shape ID incorrect.", "Rectangle1", rec.getId());
 		
-		Shape rec2 = new Polygon("Rectangle2");
+		//Shape rec2 = new Polygon("Rectangle2");
 		
 		
 	}
@@ -69,9 +69,9 @@ public class ShapeTest
 	public void TrapezoidTest()
 	{
 		// TODO: complete this...
-		Shape tra = new Trapezoid("Trapezoid1", 3.0, 2.0, 3.0, 5.0);
-		Assert.assertEquals("Trapezoid area incorrect.", 7.937, tra.getArea(), 0.0001);
-		Assert.assertEquals("Trapezoid perimeter incorrect.", 13.0, tra.getPerimeter(), 0.0001);
+		Shape tra = new Trapezoid("Trapezoid1", 3.0, 3.0, 4.0, 5.0);
+		Assert.assertEquals("Trapezoid area incorrect.",  13.311, tra.getArea(), 0.0001);
+		Assert.assertEquals("Trapezoid perimeter incorrect.", 15.0, tra.getPerimeter(), 0.0001);
 		Assert.assertEquals("Trapezoid type incorrect.", "Trapezoid", tra.getShapeType());
 		Assert.assertEquals("Shape ID incorrect.", "Trapezoid1", tra.getId());
 	}
@@ -194,14 +194,36 @@ public class ShapeTest
     public void NaturalCompareTest()
     {
 		// TODO: complete this...
-		ArrayList<String> shapes = new ArrayList<>();
-		shapes.add("Circle");
-		shapes.add("Triangle");
-		shapes.add("Rectangle");
+		Shape a = new Rectangle("test", 3, 3);
+		Shape b = new EquilateralTriangle("test2", 4);
+		Shape c = new Square("test3", 3);
+		Shape d = new Circle("test4", 1.5);
+		ArrayList<Shape> shapes = new ArrayList<>();
+		shapes.add(a);
+		shapes.add(b);
+		shapes.add(c);
+		shapes.add(d);
 		
-		ArrayList<String> shapes2 = new ArrayList<>();
-		shapes.add("Circle");
-		shapes.add("Triangle");
-		shapes.add("Rectangle");
+		ArrayList<Shape> shapes2 = new ArrayList<>();
+		shapes.add(a);
+		shapes.add(b);
+		shapes.add(c);
+		shapes.add(d);
+		
+		ShapePerimeterComparator scp = new ShapePerimeterComparator();
+		ShapeAreaComparator sca = new ShapeAreaComparator();
+		
+		boolean perimeterCompare = true;
+		boolean areaCompare = true;
+		int i = 0;
+		while (perimeterCompare == true && i < shapes.size()) {
+			perimeterCompare = scp.equals(shapes.get(i), shapes2.get(i));
+			i++;
+		}
+		int k = 0;
+		while (areaCompare == true && k < shapes.size()) {
+			areaCompare = scp.equals(shapes.get(k), shapes2.get(k));
+			k++;
+		}
     }
 }
