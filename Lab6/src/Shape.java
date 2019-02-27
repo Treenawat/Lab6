@@ -107,7 +107,7 @@ public abstract class Shape implements Comparable<Shape>
 		else if (thisArea < sArea) {
 			answer = -1;
 		}
-		else if (thisArea(sArea)) {
+		else if (thisArea == sArea) {
 			if(thisPerimeter > sPerimeter) {
 				answer = 1;
 			}
